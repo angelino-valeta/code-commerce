@@ -15,7 +15,7 @@ func NewCategoryDB(db *sql.DB) *CategoryDB {
 }
 
 func (cd *CategoryDB) GetCategories() ([]*entity.Category, error) {
-	rows, err := cd.db.Query("SELECT id, name, FROM, categories")
+	rows, err := cd.db.Query("SELECT id, name FROM categories")
 	if err != nil {
 		return nil, err
 	}

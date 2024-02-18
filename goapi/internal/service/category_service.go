@@ -26,6 +26,7 @@ func (cs CategoryService) GetCategory(id string) (*entity.Category, error) {
 	if err != nil {
 		return nil, err
 	}
+
 	return category, nil
 }
 

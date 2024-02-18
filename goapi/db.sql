@@ -1,27 +1,29 @@
+CREATE DATABASE `codecomerce`;
+
 use `codecomerce`;
 
-CREATE TABLE `categories` {
+CREATE TABLE `categories` (
   `id` varchar(36) NOT NULL,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-};
+);
 
-INSERT INTO `imersao17`.`categories` (`id`,`name`) VALUES ("6b4c28f4-6831-495a-9444-19c93452faa3","Relogios");
-INSERT INTO `imersao17`.`categories` (`id`,`name`) VALUES ("7c0ca0d4-ff23-4bd7-b131-c563067c4b43","Eletronicos");
-
+INSERT INTO `codecomerce`.`categories` (`id`,`name`) VALUES ("6b4c28f4-6831-495a-9444-19c93452faa3","Relogios");
+INSERT INTO `codecomerce`.`categories` (`id`,`name`) VALUES ("7c0ca0d4-ff23-4bd7-b131-c563067c4b43","Eletronicos");
 
 CREATE TABLE `products` (
   `id` varchar(36) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `price` float(10, 2) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
   `category_id` varchar(36) NOT NULL,
-  `image_url` varchar(255) NOT NULL
-  PRIMARY KEY (`id`)
-  KEY `fk_products_categories_id_x` (`category_id`)
+  `image_url` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_products_categories_idx` (`category_id`)
 );
 
-INSERT INTO `codecomerce`.`products` (`id`, `name`, `description`, `price`, `category_id`, `image_url`)
+INSERT INTO `codecomerce`.`products` (`id`,`name`,`description`,`price`,`category_id`,`image_url`)
+VALUES ("7f8c9d8e-9f0a-1b2c-3d4e-5f6g7h8i9j0k","Product 1","Description 1", 100, "6b4c28f4-6831-495a-9444-19c93452faa3", "http://localhost:9000/products/1.png"),
 ("66805003-f9a2-4772-b577-d5ff66207707","Product 2","Description 2", 200, "6b4c28f4-6831-495a-9444-19c93452faa3", "http://localhost:9000/products/2.png"),
 ("121829b9-e9f9-4ca9-bd14-b087afedd587","Product 3","Description 3", 300, "6b4c28f4-6831-495a-9444-19c93452faa3", "http://localhost:9000/products/3.png"),
 ("ef3d9a49-4c73-4192-97dd-55e21c0e2707","Product 4","Description 4", 400, "6b4c28f4-6831-495a-9444-19c93452faa3", "http://localhost:9000/products/4.png"),
@@ -41,3 +43,4 @@ INSERT INTO `codecomerce`.`products` (`id`, `name`, `description`, `price`, `cat
 ("fbe61a31-7bb4-4e53-9268-9138d4d038d3","Product 18","Description 18", 1800, "6b4c28f4-6831-495a-9444-19c93452faa3", "http://localhost:9000/products/18.png"),
 ("506610a1-ba99-4c14-a7b2-3c52877e8ec2","Product 19","Description 19", 1900, "6b4c28f4-6831-495a-9444-19c93452faa3", "http://localhost:9000/products/19.png"),
 ("eb296629-1fce-43ca-8413-1b3bddd07106","Product 20","Description 20", 2000, "6b4c28f4-6831-495a-9444-19c93452faa3", "http://localhost:9000/products/20.png");
+

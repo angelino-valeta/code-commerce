@@ -1,17 +1,20 @@
-GET http://localhost:8080/category
-
+GET http://localhost:8080/category HTTP/1.1
 ###
-POST http://localhost:8080/category
+POST http://localhost:8080/category HTTP/1.1
 Content-Type: application/json
-{ "name": "Category 2" }
 
+{ "name": "Computers" }
 
 ###
-GET http://localhost:8080/product
+GET http://localhost:8080/category/6b4c28f4-6831-495a-9444-19c93452faa3 HTTP/1.1
+
+###
+GET http://localhost:8080/product HTTP/1.1
 
 ### 
-POST http://localhost:8080/product
+POST http://localhost:8080/product HTTP/1.1
 Content-Type: application/json
+
 {
   "name": "Product 1",
   "description": "Description 1",
@@ -22,11 +25,11 @@ Content-Type: application/json
 
 
 ###
-GET http://localhost:8080/product/7f8c9d8e-9f0a-1b2c-3d4e-5f6g7h8i9ja0
+GET http://localhost:8080/product/3f350a2a-bc9c-45c2-89da-7c2c24971d71
 
 
 ### 
-GET http://localhost:8080/product/category/5ce585a3-fef3-427f-843b-0eadd8558230
+GET http://localhost:8080/product/category/6b4c28f4-6831-495a-9444-19c93452faa3
 
 ### 
-GET http://localhost:8080/product/category/6b6c7d6e-6f70-7172-7374-75767778797a
+GET http://localhost:8080/product/category/7c0ca0d4-ff23-4bd7-b131-c563067c4b43

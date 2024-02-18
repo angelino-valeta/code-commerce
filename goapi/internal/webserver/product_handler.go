@@ -61,7 +61,7 @@ func (wph *WebProductHandler) GetProductByCategoryID(w http.ResponseWriter, r *h
 
 func (wph *WebProductHandler) CreateProduct(w http.ResponseWriter, r *http.Request) {
 	var product entity.Product
-	err := json.NewDecoder(r.Body).Decode(product)
+	err := json.NewDecoder(r.Body).Decode(&product)
 
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
