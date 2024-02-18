@@ -1,4 +1,4 @@
-# API feita com Golang para catálogo de produtos
+# API Golang para catálogo de produtos
 
 ##  Rodar a aplicação
 
